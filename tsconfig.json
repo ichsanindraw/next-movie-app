@@ -18,8 +18,12 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@components/*": ["src/components/*"],
+      "@constant": ["src/constants/index.ts"],
+      "@constant/*": ["src/constants/*"],
+      "@lib/*": ["src/lib/*"],
     }
   },
   "include": [
