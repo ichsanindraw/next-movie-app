@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎬 Movie Search App
 
-## Getting Started
+A movie search application built with **Next.js (App Router)** that allows users to search movies, view details, and browse results efficiently using modern React patterns.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Tech Stack
+
+- Next.js 16 (App Router)
+- React 19
+- TypeScript
+- Redux Toolkit
+- Axios
+- Tailwind CSS
+- OMDb API
+
+---
+
+## 📁 Project Structure (High Level)
+
+```text
+src/
+├── app/                # Next.js App Router pages
+├── components/         # Reusable UI components
+├── config/             # App & environment configuration
+├── constants/          # App constants
+├── features/
+│   └── movies/         # Movie domain (slice, service, types)
+│     └── components/   # Movie domain (slice, service, types)
+│     └── hooks/        # Movie domain (slice, service, types)
+│     └── services/     # Movie domain (slice, service, types)
+│     └── store/        # Movie domain (slice, service, types)
+│     └── types/        # Movie domain (slice, service, types)
+├── hooks/              # Redux store & shared utilities
+├── lib/                # Redux store & shared utilities
+└── providers/          # App constants
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🔑 Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project uses the OMDb API to fetch movie data.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env` file in the project root:
 
-## Learn More
+```
+NEXT_PUBLIC_API_URL=http://www.omdbapi.com
+NEXT_PUBLIC_API_KEY=YOUR_API_KEY_HERE
+```
 
-To learn more about Next.js, take a look at the following resources:
+You can get a free API key from:
+https://www.omdbapi.com/apikey.aspx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 🛠️ How to Run the App Locally
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the Repository
 
-## Deploy on Vercel
+```
+git clone https://github.com/your-username/movie-search-app.git
+cd movie-search-app
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. Install Dependencies
+   Using npm:
+
+```
+npm install
+
+```
+
+Or using pnpm:
+
+```
+pnpm install
+```
+
+3. Run the Development Server
+   Using npm:
+
+```
+npm install
+
+```
+
+Or using pnpm:
+
+```
+pnpm install
+```
+
+5. Open in Browser
+   Open your browser and navigate to:
+
+```
+http://localhost:3000
+```
+
+✨ Features
+
+🔍 Search movies by title
+
+📄 Movie detail page
+
+♾️ Infinite scroll for long search results
+
+🔗 Search keyword synced with URL query (?q=keyword)
+
+⚡ Optimized API calls using Redux Toolkit async thunks
+
+📱 Responsive design for mobile and desktop
+
+🧪 Testing (Optional)
+
+If tests are available:
+npm run test
+
+🧠 Notes
+
+State management is handled using Redux Toolkit
+
+API logic is separated into a service layer
+
+Search behavior reacts to URL query parameters
+
+Code structure is modular and scalable
+
+scalable
+
+📌 Possible Improvements
+
+Add skeleton loading states
+
+Add unit tests for Redux slices and components
+
+Improve SEO metadata
+
+Cache search results
+
+# 📄 License
+
+This project is for learning and demonstration purposes.

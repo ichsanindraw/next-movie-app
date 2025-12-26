@@ -6,10 +6,10 @@ type Props = {
   message: string;
   type?: "error" | "success";
   duration?: number;
-  onClose: () => void;
+  onClose?: () => void;
 };
 
-export default function Toast({
+export function Toast({
   message,
   type = "error",
   duration = 3000,
@@ -22,7 +22,7 @@ export default function Toast({
 
     const timer = setTimeout(() => {
       setVisible(false);
-      setTimeout(onClose, 300);
+      if (onClose) setTimeout(onClose, 300);
     }, duration);
 
     return () => clearTimeout(timer);

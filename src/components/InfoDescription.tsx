@@ -3,7 +3,7 @@ type Props = {
   value: string;
 };
 
-export default function InfoDescription({ label, value }: Props) {
+export function InfoDescription({ label, value }: Props) {
   if (!value || value === "N/A") return null;
 
   return (

@@ -20,9 +20,10 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/components/*"],
+      "@components": ["src/components/index.ts"],
       "@constant": ["src/constants/index.ts"],
-      "@constant/*": ["src/constants/*"],
+      "@features/*": ["src/features/*"],
+      "@hooks": ["src/hooks/index.ts"],
       "@lib/*": ["src/lib/*"],
     }
   },

@@ -6,7 +6,7 @@ type Props = {
   threshold?: number;
 };
 
-export default function ScrollToTop({ threshold = 400 }: Props) {
+export function ScrollToTop({ threshold = 400 }: Props) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {

@@ -1,7 +1,4 @@
-import BackButton from "@components/BackButton";
-import BlockInfo from "@components/BlockInfo";
-import InfoDescription from "@components/InfoDescription";
-import Label from "@components/Label";
+import { BackButton, BlockInfo, InfoDescription, Label } from "@components";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { MovieService } from "src/features/movies/services/movie.service";
@@ -28,9 +25,7 @@ export default async function MovieDetailPage({ params }: Props) {
         </div>
 
         <Image
-          src={
-            movie.Poster !== "N/A" ? movie.Poster : "/poster-placeholder.png"
-          }
+          src={movie.Poster !== "N/A" ? movie.Poster : "/broken-image.jpg"}
           alt={movie.Title}
           fill
           priority
