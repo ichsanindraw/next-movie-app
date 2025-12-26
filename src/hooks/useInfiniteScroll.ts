@@ -16,6 +16,8 @@ export const useInfiniteScroll = ({
   rootMargin = "100px",
 }: UseInfiniteScrollProps) => {
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
     if (!target.current) return;
     if (!hasMore || loading) return;
 
