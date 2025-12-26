@@ -20,21 +20,20 @@ A movie search application built with **Next.js (App Router)** that allows users
 
 ```text
 src/
-├── app/                # Next.js App Router pages
-├── components/         # Reusable UI components
+├── app/                # Next.js App Router pages (layouts, routes)
+├── components/         # Shared/Generic UI components
 ├── config/             # App & environment configuration
-├── constants/          # App constants
-├── features/
-│   └── movies/         # Movie domain (slice, service, types)
-│     └── components/   # Movie domain (slice, service, types)
-│     └── hooks/        # Movie domain (slice, service, types)
-│     └── services/     # Movie domain (slice, service, types)
-│     └── store/        # Movie domain (slice, service, types)
-│     └── types/        # Movie domain (slice, service, types)
-├── hooks/              # Redux store & shared utilities
-├── lib/                # Redux store & shared utilities
-└── providers/          # App constants
-
+├── constants/          # Static app-wide constants
+├── features/           # Feature-based modules
+│   └── movies/         # Movie-specific domain logic
+│     ├── components/   # Components specific to movie feature
+│     ├── hooks/        # Custom hooks for movie logic
+│     ├── services/     # API request logic (Axios)
+│     ├── store/        # Redux slices and actions
+│     └── types/        # TypeScript interfaces/types
+├── hooks/              # Shared/Global React hooks
+├── lib/                # Third-party configurations (Redux store, Axios instance)
+└── providers/          # Context providers (Redux, Theme, etc.)
 ```
 
 # 🔑 Environment Variables
@@ -56,86 +55,63 @@ https://www.omdbapi.com/apikey.aspx
 1. Clone the Repository
 
 ```
-git clone https://github.com/your-username/movie-search-app.git
-cd movie-search-app
-
+git clone https://github.com/ichsanindraw/next-movie-app.git
+cd next-movie-app
 ```
 
 2. Install Dependencies
-   Using npm:
 
 ```
 npm install
-
-```
-
-Or using pnpm:
-
-```
+# or
 pnpm install
 ```
 
 3. Run the Development Server
-   Using npm:
 
 ```
-npm install
-
+npm run dev
+# or
+pnpm run dev
 ```
 
-Or using pnpm:
-
-```
-pnpm install
-```
-
-5. Open in Browser
+4. Open in Browser
    Open your browser and navigate to:
 
 ```
 http://localhost:3000
 ```
 
-✨ Features
+# ✨ Features
 
-🔍 Search movies by title
+- 🔍 **Search movies by title**
+- 📄 **Movie detail page**
+- ♾️ **Infinite scroll for long search results**
+- 🔗 **Search keyword synced with URL query (?q=keyword)**
+- ⚡ **Optimized API calls using Redux Toolkit async thunks**
+- 📱 **Responsive design for mobile and desktop**
 
-📄 Movie detail page
+# 🧪 Testing
 
-♾️ Infinite scroll for long search results
-
-🔗 Search keyword synced with URL query (?q=keyword)
-
-⚡ Optimized API calls using Redux Toolkit async thunks
-
-📱 Responsive design for mobile and desktop
-
-🧪 Testing (Optional)
-
-If tests are available:
+```
 npm run test
+# or
+pnpm run test
+```
 
-🧠 Notes
+# 🧠 Notes
 
-State management is handled using Redux Toolkit
+- State management is handled using Redux Toolkit
+- API logic is separated into a service layer
+- Search behavior reacts to URL query parameters
+- Code structure is modular and scalable
 
-API logic is separated into a service layer
+# 📌 Possible Improvements
 
-Search behavior reacts to URL query parameters
-
-Code structure is modular and scalable
-
-scalable
-
-📌 Possible Improvements
-
-Add skeleton loading states
-
-Add unit tests for Redux slices and components
-
-Improve SEO metadata
-
-Cache search results
+- Add skeleton loading states
+- Add unit tests for Redux slices and components
+- Improve SEO metadata
+- Cache search results
 
 # 📄 License
 
